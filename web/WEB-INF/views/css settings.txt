@@ -1,0 +1,8 @@
+
+#content {
+    margin-left: 130px; /* Отступ слева */
+    padding: 10px; /* Поля вокруг текста */
+    background: #fff; /* Цвет фона правой колонки */
+
+
+    http://htmlbook.ru/layout/fiksirovannaya-shirina-navigatsiya-sleva

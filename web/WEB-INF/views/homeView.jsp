@@ -14,7 +14,11 @@
 <jsp:include page="_header.jsp"></jsp:include>
 <jsp:include page="_menu.jsp"></jsp:include>
 
-home
+<div id="content">
+
+    Content zone
+
+</div>
 
 <jsp:include page="_footer.jsp"></jsp:include>
 </body>
