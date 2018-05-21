@@ -1,6 +1,7 @@
 package medonline.filters;
 
 import medonline.connect.MyConnection;
+import medonline.utils.MyUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -10,7 +11,7 @@ import java.sql.Connection;
 import java.util.Collection;
 import java.util.Map;
 
-@WebFilter(filterName = "JDBCFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "JDBCFilter", urlPatterns = {"/gettest","/catalog"})
 public class JDBCFilter implements Filter {
     public JDBCFilter() {
     }
@@ -77,10 +78,9 @@ public class JDBCFilter implements Filter {
                 conn.setAutoCommit(false);
 
                 // Сохранить объект Connection в attribute в request.
-                //TODO рабобраться с Utils
-//                MyUtils.storeConnection(request, conn);
 
-                request.setAttribute("ATTRIBUTE_FOR_CONNECTION", conn);
+                MyUtils.storeConnection(request, conn);
+
 
 
 

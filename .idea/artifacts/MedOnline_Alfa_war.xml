@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="MedOnline_Alfa:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/MedOnline_Alfa_war</output-path>
-    <root id="archive" name="MedOnline_Alfa_war.war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MedOnline_Alfa-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="MedOnline_Alfa:war exploded" />
     </root>
   </artifact>
