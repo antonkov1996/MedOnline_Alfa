@@ -1,6 +1,7 @@
 package medonline.utils;
 
 import medonline.entities.Classification;
+import medonline.entities.Drug;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,5 +46,34 @@ public class DBUtils {
 
         }
         return classificationList;
+    }
+
+    public static List<Drug> querryDrugs (Connection connection) throws SQLException {
+        String sql ="select * from drugs;";
+
+        PreparedStatement statement= connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        List <Drug> drugsList = new ArrayList<Drug>();
+        while (resultSet.next()){
+
+            Drug drug = new Drug(resultSet.getInt("id_drug"),resultSet.getString("drug_name"),resultSet.getInt("id_provider"),resultSet.getFloat("price"),resultSet.getInt("quantity"),resultSet.getInt("id_class"));
+            drugsList.add(drug);
+
+        }
+        return drugsList;
+    }
+
+    public static List<Drug> querryDrugsByClass (Connection connection, int id_class) throws SQLException {
+        String sql ="select * from drugs where drugs.id_class="+"id_class"+";";
+
+        PreparedStatement statement= connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        List <Drug> drugsList = new ArrayList<Drug>();
+        while (resultSet.next()){
+            Drug drug = new Drug(resultSet.getInt("id_drug"),resultSet.getString("drug_name"),resultSet.getInt("id_provider"),resultSet.getFloat("price"),resultSet.getInt("quantity"),resultSet.getInt("id_class"));
+            drugsList.add(drug);
+
+        }
+        return drugsList;
     }
 }

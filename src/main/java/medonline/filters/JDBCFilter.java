@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.util.Collection;
 import java.util.Map;
 
-@WebFilter(filterName = "JDBCFilter", urlPatterns = {"/gettest","/catalog"})
+@WebFilter(filterName = "JDBCFilter", urlPatterns = {"/gettest","/catalog","/catalog/*","/drugs"})
 public class JDBCFilter implements Filter {
     public JDBCFilter() {
     }
